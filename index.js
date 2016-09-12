@@ -1,103 +1,35 @@
 import 'babel-polyfill';
 
-//Devtools son utilidades para debugging,
-// pero prefiero utilizar las extensiones de chrome
-// estas de aqui insertan una utilidad web en la pagina
-// pero no salen cuando hay un error grande
-// las dejo aqui por si acaso
-
-// import { createDevTools } from 'redux-devtools'
-// import LogMonitor from 'redux-devtools-log-monitor'
-// import DockMonitor from 'redux-devtools-dock-monitor'
-
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import {
-  createStore,
-  combineReducers,
-  applyMiddleware,
-  compose } from 'redux';
-import { Provider } from 'react-redux';
+  browserHistory
+} from 'react-router';
 import {
-  Router,
-  Route,
-  IndexRoute,
-  browserHistory } from 'react-router';
-import {
-  syncHistoryWithStore,
-  routerReducer } from 'react-router-redux';
-// import {persistStore, autoRehydrate} from 'redux-persist';
+  syncHistoryWithStore
+} from 'react-router-redux';
 
-import
-  ReduxToastr,
-{reducer as toastrReducer} from 'react-redux-toastr';
-import { reducer as formReducer } from 'redux-form';
-
+import 'react-bootstrap-table/css/react-bootstrap-table.css';
+import 'react-bootstrap-table/css/toastr.css';
+import './node_modules/jquery/dist/jquery.js';
+import './node_modules/bootstrap/dist/js/bootstrap.js';
 import './node_modules/bootstrap/dist/css/bootstrap.css';
-import './node_modules/bootstrap/dist/css/bootstrap.css';
+import './node_modules/react-bootstrap-table/dist/react-bootstrap-table.js';
 import './node_modules/react-redux-toastr/lib/css/react-redux-toastr.css';
+import './src/client/styles/styles.css';
 
-import areasReducer from './reducers/areasReducer';
-import tareasReducer from './reducers/tareasReducer';
-import metasReducer from './reducers/metasReducer';
-import usuariosReducer from './reducers/usuariosReducer';
-import comentariosAreasReducer from './reducers/comentariosAreasReducer';
-import Areas from './containers/Areas';
-import App from './containers/App';
-import Home from './containers/Home';
-import Users from './containers/Users';
+import Root from './src/client/containers/Root';
+import configureStore from './src/client/store/configureStore';
 
-import thunkMiddleware from 'redux-thunk';
-import createLogger from 'redux-logger';
-const reducer = combineReducers({
-  areasReducer,
-  metasReducer,
-  tareasReducer,
-  usuariosReducer,
-  comentariosAreasReducer,
-  routing: routerReducer,
-  toastr: toastrReducer,
-  form: formReducer
-});
+console.info('Server environment', process.env.NODE_ENV);
+console.info('isProduction', process.env.NODE_ENV === 'production');
 
-// const DevTools = createDevTools(
-//   <DockMonitor toggleVisibilityKey="ctrl-h" changePositionKey="ctrl-q">
-//     <LogMonitor theme="tomorrow" preserveScrollTop={false} />
-//   </DockMonitor>
-// )
-
-const store = createStore(
-  reducer,
-  // undefined,
-  // autoRehydrate(),
-  compose(
-    applyMiddleware(
-      thunkMiddleware,
-      createLogger()
-    ),
-    // DevTools.instrument(),
-    window.devToolsExtension ? window.devToolsExtension() : f => f
-  )
-);
-// persistStore(store);
+const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);
 
-ReactDOM.render(
-  <Provider store={store}>
-    <div>
-      <Router history={history}>
-        <Route path="/" component={App}>
-          <IndexRoute component={Home} />
-          <Route path="/taskspage/:type/:selectedAreaId/:selectedMetaId/:selectedTareaId" component={Areas} />
-          <Route path="/users" component={Users} />
-        </Route>
-      </Router>
-      {/*<DevTools />*/}
-      <ReduxToastr
-        timeOut={8000}
-        newestOnTop={true}
-        position="top-right" />
-    </div>
-  </Provider>,
+render(
+  <Root store={store} history={history}/>,
   document.getElementById('root')
 );
+
+module.hot.accept();
