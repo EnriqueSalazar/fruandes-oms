@@ -52,7 +52,7 @@ router.post('/areas/findall', jsonParser, (req, res) => {
         model: models.areas,
         attributes: ['id', 'nombre_area', 'type'],
       }]
-    },{
+    }, {
       model: models.recurrentesDone,
       attributes: ['id', 'createdAt'],
       include: [{
@@ -177,7 +177,7 @@ router.post('/area/update', jsonParser, (req, res) => {
   };
   let calculateDeadline = (startAt, deadline_tarea) => {
     let newDeadline = moment(startAt);
-    let prevDeadline = moment(deadline_tarea);
+    let prevDeadline = deadline_tarea ? moment(deadline_tarea) : moment(startAt);
     switch (parseInt(payload.periodo)) {
       case 7:
         if (moment().isBefore(prevDeadline)) {
@@ -232,29 +232,41 @@ router.post('/area/update', jsonParser, (req, res) => {
   const id = req.body.id;
   const payload = req.body;
   let oldTarea = {};
+
+  console.error('Update Payload: ' + JSON.stringify(payload, null, 3)); // eslint-disable-line
+
   models.tareasAreas.findOne({
     where: {id: payload.id}
   }).then((result) => {
     oldTarea = result.dataValues;
-    let isNewRecurrente = payload.is_recurrente && !oldTarea.is_recurrente;
-    let isStopRecurrente = !payload.is_recurrente && oldTarea.is_recurrente;
-    let isRecurrenteChanged = oldTarea.is_recurrente != payload.is_recurrente;
+    let isRecurrente = payload.is_recurrente;
+    let wasRecurrente = oldTarea.is_recurrente;
+    let isNewRecurrente = isRecurrente && !wasRecurrente;
+    let isStopRecurrente = !isRecurrente && wasRecurrente;
+    let isRecurrenteChanged = wasRecurrente != isRecurrente;
     let isPeriodoChanged = oldTarea.periodo != payload.periodo;
     let isStartAtChanged = !moment(oldTarea.startAt).isSame(payload.startAt);
     if (isRecurrenteChanged) {
+      console.error('isRecurrenteChanged', isRecurrenteChanged);
       payload.deadline_tarea = null;
     }
     if (isStopRecurrente) {
+      console.error('isStopRecurrente', isStopRecurrente);
       payload.startAt = null;
-      payload.periodo=null;
+      payload.periodo = null;
     }
-    if (isNewRecurrente || isPeriodoChanged || isStartAtChanged) {
+    if (isRecurrente && (isNewRecurrente || isPeriodoChanged || isStartAtChanged)) {
+      console.error('isNewRecurrente', isNewRecurrente);
+      console.error('isPeriodoChanged', isPeriodoChanged);
+      console.error('isStartAtChanged', isStartAtChanged);
       payload.estado_tarea = false;
       payload.deadline_tarea = calculateDeadline(payload.startAt, null);
       updateTarea();
     } else if (payload.is_recurrente && payload.estado_tarea == true) {
+      console.error('payload.is_recurrente && payload.estado_tarea == true', payload.is_recurrente && payload.estado_tarea == true);
       createRecurrentesDone();
     } else {
+      console.error('else');
       updateTarea();
     }
   }, (rejectedPromiseError) => {

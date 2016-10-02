@@ -9,6 +9,7 @@ import {
 } from 'react-bootstrap';
 import moment from 'moment';
 import 'react-date-picker/index.css';
+import {browserHistory} from 'react-router';
 
 const HomeTable = ({
   usuarios,
@@ -17,14 +18,20 @@ const HomeTable = ({
   isAddingTarea,
   tareaChangeStatus,
 }) => {
+  const tareaDetail=(row)=>{
+    browserHistory.push('/taskspage/' + row.type + '/' + row.area_id + '/' + row.meta_id + '/' + row.id);
+
+  }
   const buttonFormatter = (cell, row) => {
     if (row.id) {
       return (
         <div>
           <Button
             className="play"
-            href={"/taskspage/" + row.type + "/" + row.area_id + "/" + row.meta_id + "/" + row.id}
-
+        //    {/*href={"/taskspage/" + row.type + "/" + row.area_id + "/" + row.meta_id + "/" + row.id}*/}
+            onClick={() => {
+              tareaDetail(row);
+            }}
             bsSize="xsmall"
             bsStyle="info"
             >

@@ -504,7 +504,9 @@ class Areas extends Component {
     let selectedAreaId = this.props.renderOptions.selectedAreaId;
     let selectedMetaId = this.props.renderOptions.selectedMetaId;
     let selectedTareaId = this.props.renderOptions.selectedTareaId;
+    console.info('Got to step 1');
     if (selectedAreaId != 0 && selectedMetaId != 0 && selectedTareaId != 0) {
+      console.info('Got to step 2');
       let initialValues =
         this.props.tareas.filter(tarea => tarea.id == this.props.renderOptions.selectedTareaId);
       return (

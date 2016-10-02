@@ -16,10 +16,10 @@ import {
 import {
   loadUsuarios
 } from '../actions/usuarioActions';
-import {browserHistory} from 'react-router';
-import {Nav, NavItem, Navbar, NavDropdown, MenuItem} from 'react-bootstrap';
+// import {browserHistory} from 'react-router';
+// import {Nav, NavItem, Navbar, NavDropdown, MenuItem} from 'react-bootstrap';
 import {Grid, Accordion, Panel, Col, Row, Well, Breadcrumb, Button, FormGroup, FormControl} from 'react-bootstrap';
-import {LinkContainer, IndexLinkContainer} from 'react-router-bootstrap';
+// import {LinkContainer, IndexLinkContainer} from 'react-router-bootstrap';
 import RecurrenteForm from '../components/RecurrenteForm'
 import RecurrentesTable from '../components/RecurrentesTable'
 import RecurrentesDoneTable from '../components/RecurrentesDoneTable'

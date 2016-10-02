@@ -42,6 +42,7 @@ let TareaForm = props => {
   // let newArea = newMeta ? areas.find(area => area.id == newMeta.area_id) : false;
   // let newAreaName = newArea ? newArea.nombre_area : '';
 // console.info("showStartAtModal",showStartAtModal,"showDeadlineModal",showDeadlineModal);
+  console.info('Got to step 3');
 
   const DeadlineModalFormatter = () => {
     let formattedMoment = '';

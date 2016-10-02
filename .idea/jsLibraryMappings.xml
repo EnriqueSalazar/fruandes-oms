@@ -2,7 +2,9 @@
 <project version="4">
   <component name="JavaScriptLibraryMappings">
     <file url="file://$PROJECT_DIR$" libraries="{fruandes-oms/node_modules}" />
+    <file url="PROJECT" libraries="{axios-DefinitelyTyped, express-DefinitelyTyped, moment-DefinitelyTyped, node-DefinitelyTyped, react-DefinitelyTyped, react-bootstrap-DefinitelyTyped, react-bootstrap-table-DefinitelyTyped, react-breadcrumbs-DefinitelyTyped, react-redux-DefinitelyTyped, react-router-DefinitelyTyped, react-router-bootstrap-DefinitelyTyped, react-router-redux-DefinitelyTyped, redux-DefinitelyTyped, redux-bootstrap-DefinitelyTyped, redux-logger-DefinitelyTyped, toastr-DefinitelyTyped, webpack-DefinitelyTyped}" />
     <includedPredefinedLibrary name="ECMAScript 6" />
     <includedPredefinedLibrary name="Node.js Core" />
+    <includedPredefinedLibrary name="fruandes-oms/node_modules" />
   </component>
 </project>
