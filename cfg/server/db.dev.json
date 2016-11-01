@@ -1,0 +1,9 @@
+{
+  "username": "root",
+  "password": "2012",
+  "database": "oms_schema",
+  "host": {
+    "host": "localhost",
+    "dialect": "mysql"
+  }
+}
