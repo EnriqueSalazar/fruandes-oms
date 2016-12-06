@@ -1,0 +1,52 @@
+.react-bs-table table th {
+  overflow: hidden;
+  white-space: pre-wrap;
+  text-overflow: ellipsis;
+}
+
+.react-bs-table table td {
+  overflow: hidden;
+  white-space: pre-wrap;
+  text-overflow: ellipsis;
+}
+input {
+    display: block;
+    width: 90%;
+    margin-right: 2px!important;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+@media (min-width: 992px){
+
+	.md-x {
+	    width: 40%;
+	}
+}
+.form-group {
+    margin-bottom: 0px;
+}
+
+
+.col-xs-3.array-item-toolbox {
+    width: 16.66666667%;
+}
+
+.array-item .col-xs-9 {    width: 83.33333333%;}
+
+
+p.col-xs-3.col-xs-offset-9.array-item-add.text-right {
+    width: 16.66666667%;
+    margin-left: 83.3333333333%;
+}
