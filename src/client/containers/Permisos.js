@@ -258,7 +258,11 @@ Permisos.propTypes = {
 };
 
 function mapStateToProps(state) {
+<<<<<<< HEAD
   const {usuariosReducer, areasReducer, clientesReducer, permisosReducer} = state;
+=======
+  const {usuariosReducer, areasReducer, permisosReducer} = state;
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
   const {
     usuarios,
     shouldUpdateUsuarios
@@ -267,10 +271,13 @@ function mapStateToProps(state) {
     areas,
     shouldUpdateAreas
   } = areasReducer;
+<<<<<<< HEAD
     const {
     clientes,
     shouldUpdateClientes
   } = clientesReducer;
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
   const {
     permisos,
     shouldUpdatePermisos,
@@ -278,7 +285,10 @@ function mapStateToProps(state) {
   } = permisosReducer;
   return {
     areas,
+<<<<<<< HEAD
     clientes,
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
     usuarios,
     permisos,
     shouldUpdatePermisos,

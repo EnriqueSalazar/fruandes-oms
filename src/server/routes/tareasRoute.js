@@ -1,7 +1,11 @@
+<<<<<<< HEAD
  /*
 
 
  
+=======
+/**
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
  * Created by enriq on 10/06/16.
  */
 const models = require('../models/index');

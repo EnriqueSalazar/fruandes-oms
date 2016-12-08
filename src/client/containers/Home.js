@@ -16,6 +16,7 @@ import {
   stopModalArea
 } from '../actions/areaActions';
 import {
+<<<<<<< HEAD
   loadClientes,
   destroyClientes,
   createClientes,
@@ -37,6 +38,8 @@ import {
   stopModalCustom
 } from '../actions/customActions';
 import {
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
   loadTareas,
   destroyTarea,
   createTarea,
@@ -88,8 +91,11 @@ class Home extends Component {
     this.props.loadAreas();
     this.props.loadTareas();
     this.props.loadPermisos();
+<<<<<<< HEAD
     this.props.loadClientes();
     this.props.loadCustom();
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
     if (localStorage.getItem('authUser_oms')) {
       this.props.loadActiveRecurrentes({id_responsable_recurrente: localStorage.getItem('authUser_oms')});
     }
@@ -105,9 +111,12 @@ class Home extends Component {
     if (nextProps.shouldUpdateTareas) {
       this.props.loadTareas();
     }
+<<<<<<< HEAD
     if (nextProps.shouldUpdateClientes) {
       this.props.loadClientes();
     }
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
     if (nextProps.shouldUpdateRecurrentes) {
       if (localStorage.getItem('authUser_oms')) {
         this.props.loadActiveRecurrentes({id_responsable_recurrente: localStorage.getItem('authUser_oms')});
@@ -219,10 +228,13 @@ Home.propTypes = {
   destroyArea: PropTypes.func,
   createArea: PropTypes.func,
   updateArea: PropTypes.func,
+<<<<<<< HEAD
   clientes: PropTypes.array.isRequired,
   isAddingClientes: PropTypes.bool.isRequired,
   shouldUpdateClientes: PropTypes.bool.isRequired,
   loadClientes: PropTypes.func,
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
   comentariosAreas: PropTypes.array.isRequired,
   shouldUpdateComentariosAreas: PropTypes.bool.isRequired,
   loadComentariosAreas: PropTypes.func,
@@ -259,8 +271,11 @@ Home.propTypes = {
 function mapStateToProps(state) {
   const {
     areasReducer,
+<<<<<<< HEAD
     clientesReducer,
     customReducer,
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
     tareasReducer,
     metasReducer,
     usuariosReducer,
@@ -273,8 +288,11 @@ function mapStateToProps(state) {
   const {areas, isAddingArea, shouldUpdateAreas, renderOptions, areaModalId} = areasReducer;
   const {tareas, isAddingTarea, shouldUpdateTareas, tareaModalId} = tareasReducer;
   const {metas, isAddingMeta, shouldUpdateMetas, metaModalId} = metasReducer;
+<<<<<<< HEAD
   const {custom, isAddingCustom, shouldUpdateCustom, customModalId} = customReducer;
   const {clientes, isAddingClientes, shouldUpdateClientes, clientesModalId} = clientesReducer;
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
   const {recurrentes, shouldUpdateRecurrentes, active}  = recurrentesReducer;
   const {
     permisos
@@ -285,10 +303,13 @@ function mapStateToProps(state) {
     shouldUpdateAreas,
     renderOptions,
     areaModalId,
+<<<<<<< HEAD
     clientes,
     isAddingClientes,
     shouldUpdateClientes,
     clientesModalId,
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
     tareas,
     isAddingTarea,
     shouldUpdateTareas,
@@ -320,6 +341,7 @@ export default connect(mapStateToProps, {
   updateRenderOptions,
   startModalArea,
   stopModalArea,
+<<<<<<< HEAD
   loadClientes,
   destroyClientes,
   createClientes,
@@ -329,6 +351,8 @@ export default connect(mapStateToProps, {
   startModalClientes,
   stopModalClientes,
   loadCustom,
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
   loadTareas,
   destroyTarea,
   createTarea,

@@ -36,6 +36,7 @@ module.exports = function defineTareasAreasModel (sequelize) {
     is_notificaciones: {
       type: Sequelize.BOOLEAN
     },
+<<<<<<< HEAD
     is_recurrente: {
       type: Sequelize.BOOLEAN
     },
@@ -43,6 +44,11 @@ module.exports = function defineTareasAreasModel (sequelize) {
       type: Sequelize.INTEGER
     }
 
+=======
+   is_recurrente: {
+      type: Sequelize.BOOLEAN
+    }
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
   }, {
     freezeTableName: true
   });

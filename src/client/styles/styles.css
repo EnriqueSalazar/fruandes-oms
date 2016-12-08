@@ -9,6 +9,7 @@
   white-space: pre-wrap;
   text-overflow: ellipsis;
 }
+<<<<<<< HEAD
 input {
     display: block;
     width: 90%;
@@ -50,3 +51,5 @@ p.col-xs-3.col-xs-offset-9.array-item-add.text-right {
     width: 16.66666667%;
     margin-left: 83.3333333333%;
 }
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc

@@ -17,16 +17,23 @@ let TareaForm = props => {
     handleSubmit,
     metas,
     areas,
+<<<<<<< HEAD
     clientes,
     custom,
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
     usuarios,
     type,
     permisos,
     isAdmin,
     allPermisos,
+<<<<<<< HEAD
     allClientes,
     selectedAreaId,
     selectedTipoId,
+=======
+    selectedAreaId,
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
     localUserId,
     initialValues,
     tareaModalId,
@@ -34,7 +41,10 @@ let TareaForm = props => {
     tareaModalStop,
     tareaAfterSave,
     isRecurrenteValue,
+<<<<<<< HEAD
     tipoClienteValue,
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
     tareaChangeStatus
   } = props;
   // let showStartAtModal = false;
@@ -43,7 +53,10 @@ let TareaForm = props => {
     return null;
   }
   let usuariosFiltered = usuarios.filter(usuario => allPermisos.find(permiso => permiso.area_id == selectedAreaId && permiso.usuario_id == usuario.id));
+<<<<<<< HEAD
   //let clientesFiltered = clientes.filter(clientes => allClientes.find(clientes => clientes.type == 1 ));
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
   // let newMeta = metas.find(meta => meta.id == initialValues.meta_id);
   // let newArea = newMeta ? areas.find(area => area.id == newMeta.area_id) : false;
   // let newAreaName = newArea ? newArea.nombre_area : '';
@@ -162,7 +175,11 @@ let TareaForm = props => {
       );
     }
   };
+<<<<<<< HEAD
   let isDisabled = !(initialValues.deadline_tarea && initialValues.id_responsable_tarea  && initialValues.id_cliente_tarea  && initialValues.id_responsable_tarea == localUserId);
+=======
+  let isDisabled = !(initialValues.deadline_tarea && initialValues.id_responsable_tarea && initialValues.id_responsable_tarea == localUserId);
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
   return (
     <form onSubmit={handleSubmit}>
       <Grid>
@@ -326,6 +343,7 @@ let TareaForm = props => {
             </Col>
           </Row>
           <br />
+<<<<<<< HEAD
           <Row>
           <Col md={4}>
            <ControlLabel>
@@ -373,6 +391,8 @@ let TareaForm = props => {
           </Col>
           </Row>
           <br />
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
           <Row className="show-grid">
             <Field
               disabled={initialValues.id_responsable_tarea != localUserId}
@@ -403,8 +423,11 @@ TareaForm.reduxForm = {
   areas: PropTypes.array.isRequired,
   metas: PropTypes.array.isRequired,
   usuarios: PropTypes.array.isRequired,
+<<<<<<< HEAD
   clientes: PropTypes.array.isRequired,
   custom:  PropTypes.array.isRequired,
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
   handleSubmit: PropTypes.func
 };
 
@@ -417,11 +440,17 @@ const selector = formValueSelector('tareaForm') // <-- same as form name
 TareaForm = connect(
   state => {
     const isRecurrenteValue = selector(state, 'is_recurrente')
+<<<<<<< HEAD
     const tipoClienteValue = selector(state, 'tipoCliente')
     // const { firstName, lastName } = selector(state, 'firstName', 'lastName')
     return {
       isRecurrenteValue,
       tipoClienteValue,
+=======
+    // const { firstName, lastName } = selector(state, 'firstName', 'lastName')
+    return {
+      isRecurrenteValue,
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
       // fullName: `${firstName || ''} ${lastName || ''}`
     }
   }
