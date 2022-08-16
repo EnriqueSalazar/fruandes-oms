@@ -13,6 +13,11 @@ import
 } from 'react-redux-toastr';
 import {reducer as formReducer} from 'redux-form';
 import logReducer from './logReducer';
+<<<<<<< HEAD
+import clientesReducer from './clientesReducer';
+import customReducer from './customReducer';
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
 import areasReducer from './areasReducer';
 import tareasReducer from './tareasReducer';
 import metasReducer from './metasReducer';
@@ -24,6 +29,11 @@ import recurrentesReducer from './recurrentesReducer';
 const appReducers = combineReducers({
   logReducer,
   areasReducer,
+<<<<<<< HEAD
+  clientesReducer,
+  customReducer,
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
   metasReducer,
   tareasReducer,
   usuariosReducer,

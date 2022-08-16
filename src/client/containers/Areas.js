@@ -36,6 +36,15 @@ import {
   stopModalMeta
 } from '../actions/metaActions';
 import {
+<<<<<<< HEAD
+  loadClientes
+} from '../actions/clientesActions';
+import {
+  loadCustom
+} from '../actions/customActions';
+import {
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
   loadComentariosAreas,
   destroyComentariosArea,
   createComentariosArea,
@@ -96,6 +105,11 @@ class Areas extends Component {
     });
     this.props.loadAreas();
     this.props.loadTareas();
+<<<<<<< HEAD
+    this.props.loadClientes();
+    this.props.loadCustom();
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
     this.props.loadMetas();
     this.props.loadComentariosAreas();
     this.props.loadPermisos();
@@ -108,12 +122,21 @@ class Areas extends Component {
     let nextAreaId = Number(nextProps.params.selectedAreaId);
     let nextMetaId = Number(nextProps.params.selectedMetaId);
     let nextTareaId = Number(nextProps.params.selectedTareaId);
+<<<<<<< HEAD
+
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
     let type = Number(this.props.renderOptions.type);
     let selectedAreaId = Number(this.props.renderOptions.selectedAreaId);
     let selectedMetaId = Number(this.props.renderOptions.selectedMetaId);
     let selectedTareaId = Number(this.props.renderOptions.selectedTareaId);
 
+<<<<<<< HEAD
+
+    if ((nextType != type || nextAreaId != selectedAreaId || nextMetaId != selectedMetaId || nextTareaId != selectedTareaId )) {
+=======
     if ((nextType != type || nextAreaId != selectedAreaId || nextMetaId != selectedMetaId || nextTareaId != selectedTareaId)) {
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
       let nextRenderOptions = Object.assign(
         {}, nextProps.renderOptions,
         {
@@ -121,10 +144,20 @@ class Areas extends Component {
           selectedAreaId: nextAreaId,
           selectedMetaId: nextMetaId,
           selectedTareaId: nextTareaId,
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
         });
       this.props.updateRenderOptions(nextRenderOptions);
       this.props.loadAreas();
       this.props.loadTareas();
+<<<<<<< HEAD
+      this.props.loadClientes();
+      this.props.loadCustom();
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
       this.props.loadMetas();
       this.props.loadComentariosAreas();
     }
@@ -500,7 +533,11 @@ class Areas extends Component {
     this.tareaAfterSave(tarea);
   }
 
+<<<<<<< HEAD
+  renderTareaForm(areas, metas, clientes, custom, permisos, level) {
+=======
   renderTareaForm(areas, metas, permisos, level) {
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
     let selectedAreaId = this.props.renderOptions.selectedAreaId;
     let selectedMetaId = this.props.renderOptions.selectedMetaId;
     let selectedTareaId = this.props.renderOptions.selectedTareaId;
@@ -514,6 +551,10 @@ class Areas extends Component {
           <TareaForm
             areas={areas}
             metas={metas}
+<<<<<<< HEAD
+            clientes={clientes}
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
             selectedAreaId={selectedAreaId}
             permisos={permisos}
             allPermisos={this.props.permisos}
@@ -528,6 +569,10 @@ class Areas extends Component {
             tareaModalStop={this.tareaModalStop}
             tareaAfterSave={this.tareaAfterSave}
             tareaChangeStatus={this.tareaChangeStatus}
+<<<<<<< HEAD
+            custom={custom}
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
           />
         </Well>
       );
@@ -660,6 +705,10 @@ class Areas extends Component {
   }
 
   render() {
+<<<<<<< HEAD
+    let customData = this.props.custom.filter(custom => custom.type !=0);
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
     let selectedAreaId = this.props.renderOptions.selectedAreaId;
     let selectedMetaId = this.props.renderOptions.selectedMetaId;
     let isAreaId = typeof selectedAreaId !== "undefined";
@@ -667,6 +716,10 @@ class Areas extends Component {
     let localUserId = localStorage.getItem('authUser_oms');
     let permisos = this.props.permisos.filter(permiso => permiso.usuario_id == localUserId);
     let usuario = this.props.usuarios.find(usuario => usuario.id == localUserId);
+<<<<<<< HEAD
+    let clientesData = this.props.clientes.filter(clientes => clientes.type !=0);
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
     let isUsuario = typeof usuario !== "undefined";
     if (isAreaId && isMetaId && isUsuario) {
       let type = this.props.renderOptions.type;
@@ -697,7 +750,11 @@ class Areas extends Component {
             </Row>
             <Row>
               <Col md={12}>
+<<<<<<< HEAD
+                {this.renderTareaForm(areasData, metasData, clientesData, customData, permisos, usuario.perfil)}
+=======
                 {this.renderTareaForm(areasData, metasData, permisos, usuario.perfil)}
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
               </Col>
             </Row>
             <Row>
@@ -773,19 +830,34 @@ Areas.propTypes = {
   startAddingMeta: PropTypes.func,
   stopAddingMeta: PropTypes.func,
   startModalMeta: PropTypes.func,
+<<<<<<< HEAD
+  stopModalMeta: PropTypes.func,
+}
+=======
   stopModalMeta: PropTypes.func
 };
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
 
 function mapStateToProps(state) {
   const {
     areasReducer,
     tareasReducer,
+<<<<<<< HEAD
+    clientesReducer,
+    customReducer,
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
     metasReducer,
     usuariosReducer,
     comentariosAreasReducer,
     permisosReducer
   } = state;
   const {usuarios} = usuariosReducer;
+<<<<<<< HEAD
+  const {clientes} = clientesReducer;
+  const {custom} = customReducer;
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
   const {comentariosAreas, shouldUpdateComentariosAreas} = comentariosAreasReducer;
   const {areas, isAddingArea, shouldUpdateAreas, renderOptions, areaModalId} = areasReducer;
   const {tareas, isAddingTarea, shouldUpdateTareas, tareaModalId} = tareasReducer;
@@ -811,11 +883,22 @@ function mapStateToProps(state) {
     usuarios,
     shouldUpdateComentariosAreas,
     comentariosAreas,
+<<<<<<< HEAD
+    permisos,
+    clientes,
+    custom
+=======
     permisos
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
   };
 }
 
 export default connect(mapStateToProps, {
+<<<<<<< HEAD
+  loadCustom,
+  loadClientes,
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
   loadAreas,
   destroyArea,
   createArea,

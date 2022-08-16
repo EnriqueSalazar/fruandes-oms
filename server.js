@@ -5,6 +5,11 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const log = require('./src/server/routes/logRoute');
 const areas = require('./src/server/routes/areasRoute');
+<<<<<<< HEAD
+const clientes = require('./src/server/routes/clientesRoute');
+const custom = require('./src/server/routes/customRoute');
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
 const metas = require('./src/server/routes/metasRoute');
 const tareas = require('./src/server/routes/tareasRoute');
 const usuarios = require('./src/server/routes/usuariosRoute');
@@ -55,6 +60,11 @@ console.info('Server environment', process.env.NODE_ENV);
 
 app.use('/log', log);
 app.use('/areas', areas);
+<<<<<<< HEAD
+app.use('/clientes', clientes);
+app.use('/custom', custom);
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
 app.use('/metas', metas);
 app.use('/tareas', tareas);
 app.use('/usuarios', usuarios);

@@ -14,6 +14,11 @@ const sequelize = new Sequelize(
 const db = {};
 
 db.areas = sequelize.import('./areasModel.js');
+<<<<<<< HEAD
+db.clientes = sequelize.import('./clientesModel.js');
+db.custom = sequelize.import('./customModel.js');
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
 db.metas = sequelize.import('./metasModel.js');
 db.tareasAreas = sequelize.import('./tareasAreasModel.js');
 db.usuarios = sequelize.import('./usuariosModel.js');

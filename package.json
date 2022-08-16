@@ -36,6 +36,10 @@
     "compression-webpack-plugin": "^0.3.1",
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^1.0.1",
+<<<<<<< HEAD
+    "form-generator-react": "^2.0.0",
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
     "html-webpack-plugin": "^2.22.0",
     "imports-loader": "^0.6.5",
     "isomorphic-fetch": "^2.2.1",
@@ -43,6 +47,10 @@
     "moment": "^2.14.1",
     "mysql": "^2.11.1",
     "nodemailer": "^2.5.0",
+<<<<<<< HEAD
+    "normalizr": "^2.2.1",
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
     "react": "^15.3.1",
     "react-bootstrap": "^0.30.3",
     "react-bootstrap-datetimepicker": "0.0.22",
@@ -51,16 +59,29 @@
     "react-datepicker": "^0.29.0",
     "react-datetime": "^2.5.0",
     "react-dom": "^15.3.1",
+<<<<<<< HEAD
+    "react-jsonschema-form": "^0.41.1",
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
     "react-redux": "^4.4.5",
     "react-redux-toastr": "^3.6.4",
     "react-router": "^2.7.0",
     "react-router-bootstrap": "^0.23.1",
     "react-router-redux": "^4.0.5",
+<<<<<<< HEAD
+    "react-schema-form": "^0.3.1",
+    "react-sortable-hoc": "^0.2.0",
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
     "react-toastr": "^2.8.0",
     "react-widgets": "^3.4.4",
     "redux": "^3.5.2",
     "redux-auth": "0.0.5-beta5",
     "redux-form": "^6.0.2",
+<<<<<<< HEAD
+    "redux-form-schema": "0.0.3",
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
     "redux-logger": "^2.6.1",
     "redux-persist": "^3.5.0",
     "redux-thunk": "^2.1.0",

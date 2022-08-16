@@ -125,13 +125,27 @@ class UserBar extends Component {
           <LinkContainer to="/taskspage/2/0/0/0">
             <NavItem eventKey={2}>Proyectos</NavItem>
           </LinkContainer>
+<<<<<<< HEAD
+          
+           <NavDropdown eventKey={3} title="CRM" id="basic-nav-dropdown">
+            <MenuItem eventKey={3.1} href="/clientespage/1/0">Clientes Nacionales</MenuItem>
+            <MenuItem eventKey={3.2} href="/clientespage/2/0">Clientes Internacionales</MenuItem>
+            <MenuItem eventKey={3.3} href="/clientespage/3/0">Organizaciones</MenuItem>
+          </NavDropdown>
+          
+=======
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
           {/*{editarRecurrentes}*/}
           {preferencesLink}
           {logLink}
         </Nav>
         <Nav pullRight>
           <NavDropdown eventKey={3} title={authUser ? authUser[0].nombre_usuario : ''} id="basic-nav-dropdown">
+<<<<<<< HEAD
+            <MenuItem eventKey={3.1} href="/users/0">Cambiar contrasena </MenuItem>
+=======
             <MenuItem eventKey={3.1} href="/users/0">Cambiar contrasena</MenuItem>
+>>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
             {/*<MenuItem divider/>*/}
             {/*{editarUsuariosMenuItem}*/}
             {/*{editarPerfilMenuItem}*/}

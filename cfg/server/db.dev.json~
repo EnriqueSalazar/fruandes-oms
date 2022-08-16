@@ -1,10 +1,6 @@
 {
   "username": "root",
-<<<<<<< HEAD
-  "password": "root",
-=======
   "password": "2012",
->>>>>>> 5431cd70ffe1299da22486f46fe6d038724b7ffc
   "database": "oms_schema",
   "host": {
     "host": "localhost",
